@@ -28,7 +28,7 @@ class LimoClient {
 	}
 	transieve(data, done) {
 		// Use lock to ensure that messages are sent one by one
-		lock.acquire(this.instance, (done) => {
+		lock.acquire(this._instance, (done) => {
 			console.log('writing data ' , data);
 			this._socket.write(data);
 			this._msgNum++;
